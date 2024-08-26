@@ -8,15 +8,19 @@ export default {
         ProductCard,
         Cart
     },
+    props: ['details'],
     data() {
         return {
             products: <Array<Product>>
                 [
                     { name: 'monitor', price: 456, id: 5 },
                     { name: 'microfono', price: 120, id: 8 },
-                    { name: 'silla', price: 56, id: 15 }
+                    { name: 'silla', price: 56, id: 15 },
+                    { name: 'escritorio', price: 405, id: 10 },
+                    { name: 'mouse', price: 12, id: 80 },
+                    { name: 'bicicleta', price: 689, id: 35 }
                 ],
-            details: <Array<CartDetail>>[]
+            // details: <Array<CartDetail>>[]
         }
     },
     methods: {
@@ -41,5 +45,5 @@ export default {
             <ProductCard :product="p" @addProduct="onProductAdded(p.id)" />
         </v-col>
     </v-row>
-    <Cart :details="details" />
+
 </template>
